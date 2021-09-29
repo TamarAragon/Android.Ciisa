@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">AppLobsangBarriga</string>
+
+    <!-- MAIN MENU ACTIVITY -->
+    <string name="activity_main_menu_txt_title">MENU PRINCIPAL</string>
+    <string name="activity_main_menu_txt_btn_sign_up">REGISTRO</string>
+    <string name="activity_main_menu_txt_btn_login">LOGIN</string>
+    <string name="activity_main_menu_txt_btn_bmi_create">INGRESAR EVALUACIÓN IMC</string>
+    <string name="activity_main_menu_txt_btn_bmi_search">BUSCAR EVALUACIONES</string>
+    <string name="activity_main_menu_txt_btn_exit_app">SALIR DE LA APP</string>
+    <string name="activity_main_menu_txt_toast_sign_up">Ingresando al formulario de registro</string>
+    <string name="activity_main_menu_txt_toast_login">Ingresando al formulario de login</string>
+    <string name="activity_main_menu_txt_toast_bmi_create">Ingresando al formulario de ingreso evaluación IMC</string>
+    <string name="activity_main_menu_txt_toast_bmi_search">Ingresando al formulario de búsqueda evaluaciones IMC</string>
+    <string name="activity_main_menu_txt_toast_exit_app">Saliendo de la aplicación…</string>
+
+    <!-- SIGN UP ACTIVITY -->
+    <string name="activity_sign_up_txt_title">FORMULARIO DE REGISTRO</string>
+    <string name="activity_sign_up_txt_til_username">Nombre de usuario</string>
+    <string name="activity_sign_up_txt_til_first_name">Nombre</string>
+    <string name="activity_sign_up_txt_til_last_name">Apellido</string>
+    <string name="activity_sign_up_txt_til_date_of_birth">Fecha de nacimiento</string>
+    <string name="activity_sign_up_txt_til_email">Email</string>
+    <string name="activity_sign_up_txt_til_height">Estatura</string>
+    <string name="activity_sign_up_txt_til_password">Clave</string>
+    <string name="activity_sign_up_txt_btn_confirm_sign_up">REGISTRAR</string>
+    <string name="activity_sign_up_txt_toast_confirm_sign_up">Registro exitoso</string>
+
+    <!-- LOGIN ACTIVITY -->
+    <string name="activity_login_txt_title">FORMULARIO DE LOGIN</string>
+    <string name="activity_login_txt_til_username">Nombre de usuario</string>
+    <string name="activity_login_txt_til_password">Clave</string>
+    <string name="activity_login_txt_btn_confirm_login">INICIAR SESIÓN</string>
+    <string name="activity_login_txt_btn_create_account">CREAR NUEVA CUENTA</string>
+    <string name="activity_login_txt_input_error_username">Usuario inválido</string>
+    <string name="activity_login_txt_input_required">Debe completar este campo</string>
+    <string name="activity_login_txt_toast_confirm_login">Iniciando sesión...</string>
+    <string name="activity_login_txt_toast_welcome">Bienvenido, %s</string>
+    <string name="activity_login_txt_toast_wrong_password">Usuario o clave inválida</string>
+
+    <!-- BMI CREATE ACTIVITY -->
+    <string name="activity_bmi_create_txt_title">REGISTRAR EVALUACIÓN</string>
+    <string name="activity_bmi_create_txt_til_date">Fecha</string>
+    <string name="activity_bmi_create_txt_til_weight">Peso (Kg)</string>
+    <string name="activity_bmi_create_txt_btn_save">GUARDAR EVALUACIÓN</string>
+    <string name="activity_bmi_create_txt_toast_save">Evaluación guardada correctamente</string>
+
+    <!-- BMI SEARCH ACTIVITY -->
+    <string name="activity_bmi_search_txt_title">CONSULTAR EVALUACIONES</string>
+    <string name="activity_bmi_search_txt_til_start_date">Fecha Desde</string>
+    <string name="activity_bmi_search_txt_til_end_date">Fecha Hasta</string>
+    <string name="activity_bmi_search_txt_btn_search">BUSCAR</string>
+    <string name="activity_bmi_search_txt_toast_search">Busqueda realizada</string>
+
+    <!-- MAIN ACTIVITY -->
+    <string name="activity_main_txt_search">Filtrar por fecha</string>
+    <string name="activity_main_txt_bmi_list">Evaluaciones</string>
+    <string name="activity_main_txt_til_start_date">Desde</string>
+    <string name="activity_main_txt_til_end_date">Hasta</string>
+    <string name="activity_main_txt_btn_filter">FILTRAR</string>
+    <string name="activity_main_txt_btn_new_bmi">NUEVA EVALUACIÓN</string>
+    <string name="activity_main_txt_btn_sign_out">CERRAR SESIÓN</string>
+    <string name="activity_main_txt_toast_filter">Filtrando...</string>
+
+</resources>

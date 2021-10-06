@@ -1,6 +1,10 @@
 package com.example.AppLobsangBarriga.models;
 
-public class Bmi {
+// Bmi model
+
+import java.io.Serializable;
+
+public class Bmi implements Serializable {
     long id;
     String date;
     String weight;

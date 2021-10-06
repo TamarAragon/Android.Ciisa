@@ -12,6 +12,8 @@ import com.example.AppLobsangBarriga.models.Bmi;
 
 import java.util.List;
 
+// BmiAdapter makes it so the bmi list works as intended
+
 public class BmiAdapter extends BaseAdapter {
     private Context ctx;
     private List<Bmi> bmiList;

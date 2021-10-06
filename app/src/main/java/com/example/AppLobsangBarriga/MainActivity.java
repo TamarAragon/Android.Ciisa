@@ -39,10 +39,13 @@ public class MainActivity extends AppCompatActivity {
         btnSignOut = findViewById(R.id.activity_main_btn_sign_out);
 
         for (int i = 0; i <= 10; i++) {
+            //Bmi newBmi = new Bmi(String.format("Date %d", i),String.format("Weight %d",i),String.format("Calculated BMI: %d",i));
             String randomDate = Integer.toString(new Random().nextInt(29) + 1) + "/" + Integer.toString(new Random().nextInt(11) + 1) + "/2021";
             String randomWeight = Integer.toString(new Random().nextInt(6) + 79);
-            //Bmi newBmi = new Bmi(String.format("Date %d", i),String.format("Weight %d",i),String.format("Calculated BMI: %d",i));
-            Bmi newBmi = new Bmi("Date: " + randomDate,"Weight: " + randomWeight,"Calculated BMI: " + Double.toString(Double.parseDouble(randomWeight)/1.72));
+            String calculatedBmi = Double.toString(Double.parseDouble(randomWeight)/1.72);
+            Bmi newBmi = new Bmi(getResources().getString(R.string.activity_main_txt_item_date) + " " + randomDate,
+                    getResources().getString(R.string.activity_main_txt_item_weight) + " " + randomWeight + getResources().getString(R.string.activity_main_txt_item_weight_kg),
+                    getResources().getString(R.string.activity_main_txt_item_bmi) + " " + calculatedBmi);
             newBmi.setId(i);
             bmiList.add(newBmi);
         }
@@ -50,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
         BmiAdapter adapter = new BmiAdapter(this, bmiList);
 
         lvAllBmi.setAdapter(adapter);
+
+        lvAllBmi.setOnItemClickListener(((adapterView, view, index, id) -> {
+            Bmi bmi = bmiList.get(index);
+            Intent i = new Intent(view.getContext(), BmiDetailActivity.class);
+            i.putExtra("bmi",bmi);
+            view.getContext().startActivity(i);
+        }));
 
         tilStartDate.getEditText().setOnClickListener(view -> {
             DatePickerFragment.showDatePickerDialog(this, tilStartDate);

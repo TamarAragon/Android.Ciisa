@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EVA01LobsangBarriga">
         <activity
+            android:name=".BmiDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
@@ -29,7 +32,7 @@
         <activity
             android:name=".SignUpActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

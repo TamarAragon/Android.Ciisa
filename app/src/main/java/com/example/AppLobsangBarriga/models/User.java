@@ -2,6 +2,8 @@ package com.example.AppLobsangBarriga.models;
 
 import java.util.Date;
 
+// User model, stores stuff about the user
+
 public class User {
     private long id;
     private String username;

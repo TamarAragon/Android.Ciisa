@@ -14,6 +14,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
 
+// This enables a calendar component on the forms
+
 public class DatePickerFragment extends DialogFragment {
     private DatePickerDialog.OnDateSetListener listener;
 

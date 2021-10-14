@@ -1,34 +1,51 @@
 package com.example.AppLobsangBarriga.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
-// User model, stores stuff about the user
-
-public class User implements IUser {
+@Entity(tableName = "user", indices = {@Index(value = "id", unique = true)})
+public class UserEntity implements IUser {
+    @PrimaryKey(autoGenerate = true)
     private long id;
+
+    @ColumnInfo(name = "username")
     private String username;
+
+    @ColumnInfo(name = "firstname")
     private String firstName;
+
+    @ColumnInfo(name = "lastname")
     private String lastName;
+
+    @ColumnInfo(name = "dateOfBirth")
     private Date dateOfBirth;
+
+    @ColumnInfo(name = "height")
     private double height;
+
+    @ColumnInfo(name = "email")
     private String email;
+
+    @ColumnInfo(name = "password")
     private String password;
 
-    public User(String username, String firstName, String lastName, Date dateOfBirth, double height, String email) {
+    public UserEntity(long id, String username, String firstName, String lastName, Date dateOfBirth, double height, String email, String password) {
+        this.id = id;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.height = height;
         this.email = email;
+        this.password = password;
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -57,9 +74,5 @@ public class User implements IUser {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

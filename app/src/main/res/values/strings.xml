@@ -25,6 +25,7 @@
     <string name="activity_sign_up_txt_til_password">Clave</string>
     <string name="activity_sign_up_txt_btn_confirm_sign_up">REGISTRAR</string>
     <string name="activity_sign_up_txt_toast_confirm_sign_up">Registro exitoso</string>
+    <string name="activity_sign_up_txt_toast_error">Algunos de los campos están incorrectos, verifique</string>
 
     <!-- LOGIN ACTIVITY -->
     <string name="activity_login_txt_title">FORMULARIO DE LOGIN</string>
@@ -37,6 +38,7 @@
     <string name="activity_login_txt_toast_confirm_login">Iniciando sesión...</string>
     <string name="activity_login_txt_toast_welcome">Bienvenido, %s</string>
     <string name="activity_login_txt_toast_wrong_password">Usuario o clave inválida</string>
+    <string name="activity_login_txt_toast_user_not_found">Usuario no encontrado</string>
 
     <!-- BMI CREATE ACTIVITY -->
     <string name="activity_bmi_create_txt_title">REGISTRAR EVALUACIÓN</string>
@@ -53,6 +55,7 @@
     <string name="activity_bmi_search_txt_toast_search">Busqueda realizada</string>
 
     <!-- MAIN ACTIVITY -->
+    <string name="activity_main_txt_title">Evaluaciones de %s</string>
     <string name="activity_main_txt_search">Filtrar por fecha</string>
     <string name="activity_main_txt_bmi_list">Evaluaciones</string>
     <string name="activity_main_txt_til_start_date">Desde</string>
@@ -65,6 +68,7 @@
     <string name="activity_main_txt_item_weight">Peso:</string>
     <string name="activity_main_txt_item_weight_kg">Kg</string>
     <string name="activity_main_txt_item_bmi">BMI:</string>
+    <string name="activity_main_txt_logout">Cerrando sesión...</string>
 
     <!-- BMI DETAIL ACTIVITY -->
     <string name="activity_bmi_detail_txt_title">DETALLES DE LA EVALUACIÓN #%d</string>

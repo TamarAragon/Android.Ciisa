@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -12,11 +13,12 @@ import com.example.AppLobsangBarriga.models.User;
 import com.example.AppLobsangBarriga.ui.DatePickerFragment;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SignUpActivity extends AppCompatActivity {
-
+    private final String DATE_PATTERN = "yyyy-MM-dd";
     private TextInputLayout tilUsername, tilFirstName, tilLastName, tilDateOfBirth, tilHeight, tilEmail, tilPassword;
     private Button btnSendSignUpForm;
 
@@ -39,29 +41,45 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         btnSendSignUpForm.setOnClickListener(view -> {
-            // TODO: Validations on SignUp activity
             String username = tilUsername.getEditText().getText().toString();
             String firstName = tilFirstName.getEditText().getText().toString();
             String lastName = tilLastName.getEditText().getText().toString();
             String dateOfBirth = tilDateOfBirth.getEditText().getText().toString();
-            //SimpleDateFormat dateFormatter = new SimpleDateFormat(DATE_PATTERN);
-            //Date dateOfBirthFormatted = dateFormatter.parse(dateOfBirth);
-            //double height = tilHeight.getEditText().getText().toString();
+            Date dateOfBirthFormatted = null;
+            try {
+                dateOfBirthFormatted = new SimpleDateFormat(DATE_PATTERN).parse(dateOfBirth);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            String height = tilHeight.getEditText().getText().toString();
             String email = tilEmail.getEditText().getText().toString();
             String password = tilPassword.getEditText().getText().toString();
 
-            User user = new User(username, firstName, lastName, email);
-            user.setPassword(password);
+            boolean usernameValid = !username.isEmpty() && username.matches("^\\S*$");
+            boolean firstNameValid = !firstName.isEmpty();
+            boolean lastNameValid = !lastName.isEmpty();
+            boolean dateOfBirthValid = !dateOfBirth.isEmpty();
+            boolean heightValid = !height.isEmpty();
+            boolean emailValid = !email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches();
+            boolean passwordValid = !password.isEmpty();
 
-            AuthController controller = new AuthController(view.getContext());
+            if (usernameValid && firstNameValid && lastNameValid && dateOfBirthValid && heightValid && emailValid && passwordValid) {
+                User user = new User(username, firstName, lastName, dateOfBirthFormatted, Double.parseDouble(height), email);
+                user.setPassword(password);
 
-            controller.register(user);
+                AuthController controller = new AuthController(view.getContext());
 
-            Toast toast = Toast.makeText(getApplicationContext(), R.string.activity_sign_up_txt_toast_confirm_sign_up, Toast.LENGTH_SHORT);
-            toast.show();
-            Intent i = new Intent(view.getContext(), LoginActivity.class);
-            startActivity(i);
-            finish();
+                controller.register(user);
+
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.activity_sign_up_txt_toast_confirm_sign_up, Toast.LENGTH_SHORT);
+                toast.show();
+                Intent i = new Intent(view.getContext(), LoginActivity.class);
+                startActivity(i);
+                finish();
+            } else {
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.activity_sign_up_txt_toast_error, Toast.LENGTH_SHORT);
+                toast.show();
+            }
         });
     }
 }

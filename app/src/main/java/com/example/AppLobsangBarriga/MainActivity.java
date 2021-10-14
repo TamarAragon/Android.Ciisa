@@ -7,9 +7,12 @@ import android.graphics.Region;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.AppLobsangBarriga.controllers.AuthController;
 import com.example.AppLobsangBarriga.models.Bmi;
+import com.example.AppLobsangBarriga.models.User;
 import com.example.AppLobsangBarriga.ui.BmiAdapter;
 import com.example.AppLobsangBarriga.ui.DatePickerFragment;
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
     private List<Bmi> bmiList = new ArrayList<>();
     private TextInputLayout tilStartDate, tilEndDate;
     private Button btnFilter, btnNewBmi, btnSignOut;
+    private AuthController authController;
+    private TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        authController = new AuthController(this);
 
         lvAllBmi = findViewById(R.id.activity_main_lv_bmi);
         tilStartDate = findViewById(R.id.activity_main_til_start_date);
@@ -37,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         btnFilter = findViewById(R.id.activity_main_btn_filter);
         btnNewBmi = findViewById(R.id.activity_main_btn_new_bmi);
         btnSignOut = findViewById(R.id.activity_main_btn_sign_out);
+        tvTitle = findViewById(R.id.activity_main_txt_title);
+
+        User user = authController.getUserSession();
+
+        //tvTitle.setText(String.format(R.string.activity_main_txt_toast_filter, user.getFirstName()));
+        tvTitle.setText(String.format("Evaluaciones de %s", user.getFirstName()));
 
         for (int i = 0; i <= 10; i++) {
             //Bmi newBmi = new Bmi(String.format("Date %d", i),String.format("Weight %d",i),String.format("Calculated BMI: %d",i));
@@ -80,9 +93,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnSignOut.setOnClickListener(view -> {
-            Intent i = new Intent(view.getContext(), LoginActivity.class);
-            startActivity(i);
-            finish();
+            authController.logout();
+            //Intent i = new Intent(view.getContext(), LoginActivity.class);
+            //startActivity(i);
+            //finish();
         });
     }
 }

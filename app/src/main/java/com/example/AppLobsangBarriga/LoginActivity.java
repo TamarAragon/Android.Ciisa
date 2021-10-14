@@ -13,9 +13,12 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Obtiene elementos del formulario
     private Button btnSendLoginForm, btnSignUp;
     private TextInputLayout tilUsername, tilPassword;
 
+    // Sobreescribe el metodo onCreate de AppCompatActivity
+    // El metodo onCreate se ejecuta al levantar la vista, ver ciclo de vida android para mas referencias
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

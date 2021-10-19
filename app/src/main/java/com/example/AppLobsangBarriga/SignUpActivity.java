@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         tilPassword = findViewById(R.id.activity_sign_up_til_password);
 
         tilDateOfBirth.getEditText().setOnClickListener(view -> {
-            DatePickerFragment.showDatePickerDialog(this, tilDateOfBirth);
+            DatePickerFragment.showDatePickerDialog(this, tilDateOfBirth, new Date());
         });
 
         btnSendSignUpForm.setOnClickListener(view -> {

@@ -51,6 +51,10 @@ public class User implements IUser {
         return height;
     }
 
+    public String getHeightAsString() {
+        return Double.toString(height);
+    }
+
     public String getEmail() {
         return email;
     }

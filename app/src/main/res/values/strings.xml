@@ -45,6 +45,7 @@
     <string name="activity_bmi_create_txt_til_date">Fecha</string>
     <string name="activity_bmi_create_txt_til_weight">Peso (Kg)</string>
     <string name="activity_bmi_create_txt_btn_save">GUARDAR EVALUACIÓN</string>
+    <string name="activity_bmi_create_txt_btn_back">VOLVER</string>
     <string name="activity_bmi_create_txt_toast_save">Evaluación guardada correctamente</string>
 
     <!-- BMI SEARCH ACTIVITY -->

@@ -46,12 +46,13 @@
                     android:layout_marginEnd="20sp"
                     android:layout_marginRight="20sp"
                     android:layout_marginBottom="10sp"
+                    android:focusable="false"
                     android:hint="@string/activity_bmi_create_txt_til_date"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_bmi_create_weight"
+                android:id="@+id/activity_bmi_create_til_weight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -78,6 +79,18 @@
                 android:layout_marginRight="20sp"
                 android:layout_marginBottom="10sp"
                 android:text="@string/activity_bmi_create_txt_btn_save" />
+
+            <Button
+                android:id="@+id/activity_bmi_create_btn_back"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="10sp"
+                android:text="@string/activity_bmi_create_txt_btn_back" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

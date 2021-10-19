@@ -51,10 +51,10 @@ public class BmiAdapter extends BaseAdapter {
         TextView tvWeight = view.findViewById(R.id.item_bmi_lv_weight);
         TextView tvBmi = view.findViewById(R.id.item_bmi_lv_bmi);
 
-        tvId.setText(Long.toString(bmi.getId()));
-        tvDate.setText(bmi.getDate());
-        tvWeight.setText(bmi.getWeight());
-        tvBmi.setText(bmi.getCalculatedBmi());
+        tvId.setText("ID #" + Long.toString(bmi.getId()));
+        tvDate.setText("Fecha: " + bmi.getDateAsString());
+        tvWeight.setText("Peso (Kg):" + bmi.getWeightAsString());
+        tvBmi.setText("IMC: " + bmi.getCalculatedBmiAsString());
 
         return view;
     }

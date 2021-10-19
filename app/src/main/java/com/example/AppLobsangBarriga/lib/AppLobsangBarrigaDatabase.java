@@ -7,11 +7,13 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
+import com.example.AppLobsangBarriga.dao.BmiDao;
 import com.example.AppLobsangBarriga.dao.UserDao;
+import com.example.AppLobsangBarriga.models.BmiEntity;
 import com.example.AppLobsangBarriga.models.UserEntity;
 import com.example.AppLobsangBarriga.utils.Converters;
 
-@Database(entities = {UserEntity.class}, version = 1, exportSchema = false)
+@Database(entities = {UserEntity.class, BmiEntity.class}, version = 2, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppLobsangBarrigaDatabase extends RoomDatabase {
     private static final String DB_NAME = "AppLobsangBarriga";
@@ -28,4 +30,5 @@ public abstract class AppLobsangBarrigaDatabase extends RoomDatabase {
     }
 
     public abstract UserDao userDao();
+    public abstract BmiDao bmiDao();
 }

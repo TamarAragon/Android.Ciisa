@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.AppLobsangBarriga.controllers.BmiController;
 import com.example.AppLobsangBarriga.models.Bmi;
 
 public class BmiDetailActivity extends AppCompatActivity {
@@ -28,9 +29,14 @@ public class BmiDetailActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.activity_bmi_detail_btn_back);
 
         tvTitle.setText(String.format(getString(R.string.activity_bmi_detail_txt_title), bmi.getId()));
-        tvDate.setText(bmi.getDate());
-        tvWeight.setText(bmi.getWeight());
-        tvBmi.setText(bmi.getCalculatedBmi());
+        tvDate.setText("Fecha: " + bmi.getDateAsString());
+        tvWeight.setText("Peso (Kg): " + bmi.getWeightAsString());
+        tvBmi.setText("IMC: " + bmi.getCalculatedBmiAsString());
+
+        btnDelete.setOnClickListener(view -> {
+            BmiController controller = new BmiController(view.getContext());
+            controller.delete(bmi.getId());
+        });
 
         btnBack.setOnClickListener(view -> {
             super.onBackPressed();

@@ -9,20 +9,21 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.AppLobsangBarriga.controllers.AuthController;
+import com.example.AppLobsangBarriga.lib.TilValidator;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
 
-    // Obtiene elementos del formulario
     private Button btnSendLoginForm, btnSignUp;
     private TextInputLayout tilUsername, tilPassword;
+    private AuthController authController;
 
-    // Sobreescribe el metodo onCreate de AppCompatActivity
-    // El metodo onCreate se ejecuta al levantar la vista, ver ciclo de vida android para mas referencias
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        authController = new AuthController(this);
 
         btnSendLoginForm = findViewById(R.id.activity_login_btn_confirm_login);
         btnSignUp = findViewById(R.id.activity_login_btn_create_account);
@@ -63,5 +64,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(i);
             finish();
         });
+
     }
 }

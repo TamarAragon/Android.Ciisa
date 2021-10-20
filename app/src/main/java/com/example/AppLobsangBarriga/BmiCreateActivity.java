@@ -59,7 +59,7 @@ public class BmiCreateActivity extends AppCompatActivity {
             AuthController authController = new AuthController(view.getContext());
             User user = authController.getUserSession();
 
-            Bmi bmi = new Bmi(bmiDateFormatted, bmiWeightFormatted, bmiWeightFormatted / user.getHeight(), user.getId());
+            Bmi bmi = new Bmi(bmiDateFormatted, bmiWeightFormatted, bmiWeightFormatted / (user.getHeight() * user.getHeight()), user.getId());
 
             BmiController controller = new BmiController(view.getContext());
             controller.register(bmi);
